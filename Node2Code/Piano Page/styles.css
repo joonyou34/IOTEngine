@@ -1,0 +1,83 @@
+body {
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+.piano-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    width: 100%;
+}
+
+.piano {
+    display: flex;
+    position: relative;
+}
+
+.key {
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.white {
+    width: 40px;
+    height: 200px;
+    background-color: white;
+    position: relative;
+    z-index: 0;
+    margin-right: 2px;
+}
+
+.black {
+    width: 30px;
+    height: 120px;
+    background-color: black;
+    position: absolute;
+    z-index: 1;
+    margin-left: -15px; /* Black keys overlay the white ones */
+}
+
+.key.active {
+    background-color: lightblue;
+}
+
+header {
+    display: flex;
+    z-index: 100;
+    justify-content: center;
+    position: absolute;
+    left: -10%;
+    width: 120%;
+    height: 10%;
+    align-items: center;
+    background-color:indigo;
+    outline-width: 3%;
+    outline-style: dashed;
+    outline-color: darkorchid;
+    gap:10px;
+}
+
+.header-button {
+    animation-direction: reverse;
+    padding: 15px;
+    border-radius: 100px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: medium;
+    font-style:italic;
+    background-color: rgb(142, 255, 163);
+    cursor: pointer;
+    transition: background-color 400ms ease, filter 350ms ease;
+    width: 200px;
+}
+
+.header-button.pressed {
+    background: #ff9898;
+    box-shadow: 0 0 0 white;
+    transform: translateY(2px) 
+}
+
+.header-button:hover {
+    filter: brightness(70%);
+}
